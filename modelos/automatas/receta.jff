@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<structure>
+	<type>fa</type>
+	<automaton>
+		<!-- Estados del Autómata de la Receta Térmica: ^PC{1,3}E$ -->
+		<state id="0" name="Inicio">
+			<x>80.0</x>
+			<y>180.0</y>
+			<initial/>
+		</state>
+		<state id="1" name="Precalentado">
+			<x>220.0</x>
+			<y>180.0</y>
+		</state>
+		<state id="2" name="Cocido_1">
+			<x>360.0</x>
+			<y>180.0</y>
+		</state>
+		<state id="3" name="Cocido_2">
+			<x>500.0</x>
+			<y>180.0</y>
+		</state>
+		<state id="4" name="Cocido_3">
+			<x>640.0</x>
+			<y>180.0</y>
+		</state>
+		<state id="5" name="Receta_Conforme">
+			<x>500.0</x>
+			<y>320.0</y>
+			<final/>
+		</state>
+		<!-- Transiciones de la Receta Térmica en Mayúsculas segun la Guia: P, C, E -->
+		<transition>
+			<from>0</from>
+			<to>1</to>
+			<read>P</read>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>2</to>
+			<read>C</read>
+		</transition>
+		<transition>
+			<from>2</from>
+			<to>3</to>
+			<read>C</read>
+		</transition>
+		<transition>
+			<from>3</from>
+			<to>4</to>
+			<read>C</read>
+		</transition>
+		<!-- Transiciones de Enfriamiento (E) desde 1, 2 y 3 Cocciones hacia Receta_Conforme -->
+		<transition>
+			<from>2</from>
+			<to>5</to>
+			<read>E</read>
+		</transition>
+		<transition>
+			<from>3</from>
+			<to>5</to>
+			<read>E</read>
+		</transition>
+		<transition>
+			<from>4</from>
+			<to>5</to>
+			<read>E</read>
+		</transition>
+	</automaton>
+</structure>

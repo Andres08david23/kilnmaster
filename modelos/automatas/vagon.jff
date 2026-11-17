@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<structure>
+	<type>fa</type>
+	<automaton>
+		<!-- Estados del Autómata del Vagón (Planta) -->
+		<state id="0" name="Crudo">
+			<x>120.0</x>
+			<y>220.0</y>
+			<initial/>
+			<final/>
+		</state>
+		<state id="1" name="Precalentado">
+			<x>280.0</x>
+			<y>120.0</y>
+		</state>
+		<state id="2" name="Cocido">
+			<x>480.0</x>
+			<y>120.0</y>
+		</state>
+		<state id="3" name="Enfriado">
+			<x>640.0</x>
+			<y>220.0</y>
+		</state>
+		<state id="4" name="Quebrado">
+			<x>380.0</x>
+			<y>320.0</y>
+		</state>
+		<!-- Transiciones Nominales de Planta -->
+		<transition>
+			<from>0</from>
+			<to>1</to>
+			<read>p</read>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>2</to>
+			<read>c</read>
+		</transition>
+		<transition>
+			<from>2</from>
+			<to>2</to>
+			<read>c</read>
+		</transition>
+		<transition>
+			<from>2</from>
+			<to>3</to>
+			<read>e</read>
+		</transition>
+		<transition>
+			<from>3</from>
+			<to>0</to>
+			<read>d</read>
+		</transition>
+		<!-- Choques Térmicos (Fuera de Secuencia) -->
+		<transition>
+			<from>0</from>
+			<to>4</to>
+			<read>c</read>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>4</to>
+			<read>e</read>
+		</transition>
+		<!-- Recuperación de Falla -->
+		<transition>
+			<from>4</from>
+			<to>0</to>
+			<read>l</read>
+		</transition>
+	</automaton>
+</structure>
