@@ -79,7 +79,7 @@ export class Planta extends Phaser.Scene {
     // Radar del Árbol de Cobertura (arriba a la derecha): se recalcula en cada disparo con la regla de habilitación vigente.
     this.radar = new Radar(this, ANCHO - 44, 44);
     this.radar.g.setDepth(9000);
-    this.add.text(ANCHO - 44, 82, 'Radar', { fontFamily: 'monospace', fontSize: '10px', color: '#cfd3d8' }).setOrigin(0.5).setDepth(9000);
+    this.txtRadar = this.add.text(ANCHO - 44, 82, 'Radar', { fontFamily: 'monospace', fontSize: '10px', color: '#cfd3d8' }).setOrigin(0.5).setDepth(9000);
     this.sim.on('radar', (c) => this.radar.set(c));
     this.radar.set(this.sim.colorRadar());
     this.sim.on('reintento', () => this.alReintento());
@@ -413,8 +413,12 @@ export class Planta extends Phaser.Scene {
     // La única lógica de simulación: avanzar el reloj.
     this.sim.avanzar((delta / 1000) * this.reloj.velocidad);
     this.vigilarFps();
-    if (this.children.list.length !== this._hijos) this.clasificar();
-    this.txtReloj.setText(`Turno ${this.turno}/${TURNOS}   t = ${Math.min(180, this.reloj.ahora).toFixed(0)} s / 180 s${this.reloj.pausado ? '   PAUSA' : ''}   ×${this.reloj.velocidad}`);
+    this.clasificar(); // objetos nuevos (p. ej. los gráficos que se redibujan) se asignan a su cámara en cada cuadro
+    this.txtReloj.setText(`T${this.turno}/${TURNOS} · ${Math.min(180, this.reloj.ahora).toFixed(0)}/180 s · ×${this.reloj.velocidad}${this.reloj.pausado ? ' · PAUSA' : ''}`);
+    // Con el HUD de una entidad abierto (panel a la derecha) el puntaje se corre a la izquierda y el radar se oculta
+    const hud = this.scene.isActive('HUDMaquina');
+    this.txtPuntos.setX(hud ? 380 : ANCHO / 2);
+    this.radar.g.setVisible(!hud); this.txtRadar.setVisible(!hud);
     if (this.info.visible) {
       this.info.setText(`fps ${Math.round(this.game.loop.actualFps)}  ·  t = ${this.reloj.ahora.toFixed(1)} s  ·  x${this.reloj.velocidad}${this.reloj.pausado ? '  ·  PAUSA' : ''}`);
     }
