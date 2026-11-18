@@ -1,0 +1,60 @@
+{
+  "nombre": "MaquinaSimple",
+  "estados": [
+    "Lista",
+    "Operando",
+    "Falla"
+  ],
+  "inicial": "Lista",
+  "marcados": [
+    "Lista"
+  ],
+  "eventos": [
+    {
+      "id": "iniciar",
+      "codigo": "I",
+      "controlable": true,
+      "observable": true
+    },
+    {
+      "id": "terminar",
+      "codigo": "T",
+      "controlable": false,
+      "observable": true
+    },
+    {
+      "id": "fallar",
+      "codigo": "F",
+      "controlable": false,
+      "observable": true
+    },
+    {
+      "id": "reparar",
+      "codigo": "R",
+      "controlable": true,
+      "observable": true
+    }
+  ],
+  "transiciones": [
+    [
+      "Lista",
+      "iniciar",
+      "Operando"
+    ],
+    [
+      "Operando",
+      "terminar",
+      "Lista"
+    ],
+    [
+      "Operando",
+      "fallar",
+      "Falla"
+    ],
+    [
+      "Falla",
+      "reparar",
+      "Lista"
+    ]
+  ]
+}

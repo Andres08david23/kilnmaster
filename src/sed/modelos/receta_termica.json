@@ -1,0 +1,73 @@
+{
+  "nombre": "RecetaTermica",
+  "expresion": "^PC{1,3}E$",
+  "estados": [
+    "q0",
+    "q1",
+    "q2",
+    "q3",
+    "q4",
+    "q5"
+  ],
+  "inicial": "q0",
+  "marcados": [
+    "q5"
+  ],
+  "eventos": [
+    {
+      "id": "precalentar",
+      "codigo": "P",
+      "controlable": true,
+      "observable": true
+    },
+    {
+      "id": "ciclo_coccion",
+      "codigo": "C",
+      "controlable": true,
+      "observable": true
+    },
+    {
+      "id": "enfriar",
+      "codigo": "E",
+      "controlable": true,
+      "observable": true
+    }
+  ],
+  "transiciones": [
+    [
+      "q0",
+      "precalentar",
+      "q1"
+    ],
+    [
+      "q1",
+      "ciclo_coccion",
+      "q2"
+    ],
+    [
+      "q2",
+      "ciclo_coccion",
+      "q3"
+    ],
+    [
+      "q3",
+      "ciclo_coccion",
+      "q4"
+    ],
+    [
+      "q2",
+      "enfriar",
+      "q5"
+    ],
+    [
+      "q3",
+      "enfriar",
+      "q5"
+    ],
+    [
+      "q4",
+      "enfriar",
+      "q5"
+    ]
+  ]
+}

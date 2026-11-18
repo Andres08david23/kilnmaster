@@ -1,0 +1,88 @@
+{
+  "nombre": "Vagon",
+  "estados": [
+    "Crudo",
+    "Precalentado",
+    "Cocido",
+    "Enfriado",
+    "Quebrado"
+  ],
+  "inicial": "Crudo",
+  "marcados": [
+    "Crudo"
+  ],
+  "eventos": [
+    {
+      "id": "precalentar",
+      "codigo": "P",
+      "controlable": true,
+      "observable": true
+    },
+    {
+      "id": "cocer",
+      "codigo": "C",
+      "controlable": true,
+      "observable": true
+    },
+    {
+      "id": "enfriar",
+      "codigo": "E",
+      "controlable": true,
+      "observable": true
+    },
+    {
+      "id": "descargar",
+      "codigo": "D",
+      "controlable": true,
+      "observable": true
+    },
+    {
+      "id": "limpiar_vagon",
+      "codigo": "L",
+      "controlable": true,
+      "observable": true
+    }
+  ],
+  "transiciones": [
+    [
+      "Crudo",
+      "precalentar",
+      "Precalentado"
+    ],
+    [
+      "Crudo",
+      "cocer",
+      "Quebrado"
+    ],
+    [
+      "Precalentado",
+      "cocer",
+      "Cocido"
+    ],
+    [
+      "Precalentado",
+      "enfriar",
+      "Quebrado"
+    ],
+    [
+      "Cocido",
+      "cocer",
+      "Cocido"
+    ],
+    [
+      "Cocido",
+      "enfriar",
+      "Enfriado"
+    ],
+    [
+      "Enfriado",
+      "descargar",
+      "Crudo"
+    ],
+    [
+      "Quebrado",
+      "limpiar_vagon",
+      "Crudo"
+    ]
+  ]
+}

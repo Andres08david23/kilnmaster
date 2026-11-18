@@ -1,0 +1,368 @@
+{
+  "nombre": "KilnMaster N2 (con prevencion)",
+  "lugares": [
+    {
+      "id": "p1",
+      "nombre": "Vagon_Z1",
+      "m0": 1,
+      "k": 1,
+      "capacidad": "estricta"
+    },
+    {
+      "id": "p2",
+      "nombre": "Vagon_Z2",
+      "m0": 1,
+      "k": 1,
+      "capacidad": "estricta"
+    },
+    {
+      "id": "p3",
+      "nombre": "Vagon_Z3",
+      "m0": 1,
+      "k": 1,
+      "capacidad": "estricta"
+    },
+    {
+      "id": "p4",
+      "nombre": "Vagon_Z4",
+      "m0": 1,
+      "k": 1,
+      "capacidad": "estricta"
+    },
+    {
+      "id": "p5",
+      "nombre": "Vagon_R1",
+      "m0": 1,
+      "k": 1,
+      "capacidad": "estricta"
+    },
+    {
+      "id": "p6",
+      "nombre": "Vagon_R2",
+      "m0": 0,
+      "k": 1,
+      "capacidad": "estricta"
+    },
+    {
+      "id": "p7",
+      "nombre": "Libre_Z1",
+      "m0": 0,
+      "k": 1,
+      "capacidad": "estricta"
+    },
+    {
+      "id": "p8",
+      "nombre": "Libre_Z2",
+      "m0": 0,
+      "k": 1,
+      "capacidad": "estricta"
+    },
+    {
+      "id": "p9",
+      "nombre": "Libre_Z3",
+      "m0": 0,
+      "k": 1,
+      "capacidad": "estricta"
+    },
+    {
+      "id": "p10",
+      "nombre": "Libre_Z4",
+      "m0": 0,
+      "k": 1,
+      "capacidad": "estricta"
+    },
+    {
+      "id": "p11",
+      "nombre": "Libre_R1",
+      "m0": 0,
+      "k": 1,
+      "capacidad": "estricta"
+    },
+    {
+      "id": "p12",
+      "nombre": "Libre_R2",
+      "m0": 1,
+      "k": 1,
+      "capacidad": "estricta"
+    },
+    {
+      "id": "p13",
+      "nombre": "Vagon_nuevo",
+      "m0": 1,
+      "k": 1,
+      "capacidad": "estricta"
+    },
+    {
+      "id": "p14",
+      "nombre": "Cupo",
+      "m0": 0,
+      "k": 1,
+      "capacidad": "estricta"
+    }
+  ],
+  "transiciones": [
+    {
+      "id": "t1",
+      "nombre": "t_avanzar_Z1",
+      "disparo": "jugador"
+    },
+    {
+      "id": "t2",
+      "nombre": "t_avanzar_Z2",
+      "disparo": "jugador"
+    },
+    {
+      "id": "t3",
+      "nombre": "t_avanzar_Z3",
+      "disparo": "jugador"
+    },
+    {
+      "id": "t4",
+      "nombre": "t_avanzar_Z4",
+      "disparo": "jugador"
+    },
+    {
+      "id": "t5",
+      "nombre": "t_avanzar_R1",
+      "disparo": "jugador"
+    },
+    {
+      "id": "t6",
+      "nombre": "t_avanzar_R2",
+      "disparo": "jugador"
+    },
+    {
+      "id": "t7",
+      "nombre": "t_agregar_vagon",
+      "disparo": "jugador"
+    }
+  ],
+  "pre": [
+    [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      1
+    ]
+  ],
+  "post": [
+    [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ]
+}
